@@ -98,4 +98,8 @@ const routes = {
   }
 }
 
-connect().use(router(routes)).listen(3000)
+// connect().use(router(routes)).listen(3000)
+
+const rewrite = require('./middleware/rewrite')
+
+connect().use(rewrite).use(hello).listen(3000)
